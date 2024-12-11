@@ -15,6 +15,9 @@
             int minRandomNumber = 0; ;
             int maxRandomNumber = 10;
 
+            Random rand = new Random();
+            randomNumber = rand.Next(minRandomNumber, maxRandomNumber);
+
             while (isWork)
             {
                 Console.WriteLine($"Выберете необходимое действие для начала работы!\n \n{CommandShowPoem} - посмотреть отрывок" +
@@ -23,9 +26,6 @@
                 Console.Write("\n");
                 userImput = Console.ReadLine();
                 
-            Random random = new Random();
-            randomNumber = random.Next(minRandomNumber, maxRandomNumber);
-
                 switch(userImput)
                 {
                     case CommandShowPoem:
