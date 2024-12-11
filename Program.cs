@@ -6,12 +6,14 @@
         {
             bool isWork = true;
             string userImput;
-            int randomNumber;
             const string CommandShowPoem = "1";
             const string CommandShowDescriptionOfFilm = "2";
             const string CommandShowRandomNumbers = "3";
             const string CommandClearConsole = "4";
             const string CommandExit = "5";
+            int randomNumber;
+            int minRandomNumber = 0; ;
+            int maxRandomNumber = 10;
 
             while (isWork)
             {
@@ -21,6 +23,9 @@
                 Console.Write("\n");
                 userImput = Console.ReadLine();
                 
+            Random random = new Random();
+            randomNumber = random.Next(minRandomNumber, maxRandomNumber);
+
                 switch(userImput)
                 {
                     case CommandShowPoem:
@@ -47,8 +52,6 @@
                         break;
 
                     case CommandShowRandomNumbers:
-                        Random random = new Random();
-                        randomNumber = random.Next(0, 10);
                         Console.WriteLine($"Случайное число - {randomNumber}");
                         break;
 
